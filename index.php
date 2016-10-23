@@ -1,13 +1,22 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use Cocur\Slugify\Slugify;
+use Carbon\Carbon;
 
-$slugify = new Slugify();
-
+$birthday = '';
+if($_POST['date']!='')
+    $birthday = Carbon::parse($_POST['date'])->format('l');
 ?>
-<form action="index.php" method="post">
-    <input type="text" name="text_for_slug" placeholder="write text to convert"/>
-    <input type="submit" />
-</form>
-<textarea><?php echo $slugify->slugify($_POST['text_for_slug']);?></textarea>
+
+<?php if($birthday==''){ ?>
+    <h1>In which day you born</h1>
+    <p>Tips: put your date of born in yyyy/mm/dd format</p>
+    <form action="index.php" method="post">
+        <label for="date" style="150px; display: block;">First date</label>
+        <input type="text" placeholder="yyyy/mm/dd" name="date" id="date"/>
+        <br/><br/>
+        <input type="submit" />
+    </form>
+<?php } else { ?>
+    <h2>You born on <?php echo $birthday;?></h2>
+<?php }?>
