@@ -1,0 +1,12 @@
+{
+    "name": "roman/dz-2",
+    "description": "'Description of composer'",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6.0",
+        "cocur/slugify": "^2.3",
+        "nesbot/carbon": "^1.21"
+    }
+}
