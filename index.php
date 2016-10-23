@@ -1,2 +1,5 @@
 <?php
-echo 123;
+use Cocur\Slugify\Slugify;
+
+$slugify = new Slugify();
+echo $slugify->slugify('Hello World!');
