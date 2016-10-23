@@ -11,7 +11,7 @@ if($_POST['date']!='')
 <?php if($birthday==''){ ?>
     <h1>In which day you born</h1>
     <p>Tips: put your date of born in yyyy/mm/dd format</p>
-    <form action="index.php" method="post">
+    <form action="carbon.php" method="post">
         <label for="date" style="150px; display: block;">First date</label>
         <input type="text" placeholder="yyyy/mm/dd" name="date" id="date"/>
         <br/><br/>
